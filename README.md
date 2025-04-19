@@ -9,7 +9,7 @@ Este proyecto implementa y compara diferentes arquitecturas de redes neuronales 
 
 ---
 
-El repositorio de este po}royecto es: https://github.com/mgualteros/Taller_2_Deep_Learning
+El repositorio de este proyecto es: https://github.com/mgualteros/Taller_2_Deep_Learning
 
 ## Contexto del problema
 
