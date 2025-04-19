@@ -15,7 +15,7 @@ El repositorio de este proyecto es: https://github.com/mgualteros/Taller_2_Deep_
 
 El conjunto de datos presentaba un **importante desbalanceo**, donde apenas el **7%** de los ejemplos pertenecía a la clase **positiva (1)**. Además, se encontraron:
 
-- Palabras irrelevantes o sin sentido en el contexto de su categoría. (amor y felicidad lo consideraba palabras negativas y racismo como positivo)
+- Palabras irrelevantes o sin sentido en el contexto de su categoría. ("love" y "hhapy" lo consideraba palabras negativas y "racism" como positivo)
 - Etiquetado incorrecto en algunos casos.
 
 Para abordar esto:
@@ -28,7 +28,6 @@ Para abordar esto:
 
 pip install -r requirements.txt
 
-==============================
 DESCRIPCIÓN DE ARCHIVOS .py
 ==============================
 
