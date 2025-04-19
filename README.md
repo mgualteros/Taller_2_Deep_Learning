@@ -20,7 +20,6 @@ El conjunto de datos presentaba un **importante desbalanceo**, donde apenas el *
 
 Para abordar esto:
 
-- Se aplicó **limpieza y preprocesamiento** del texto.
 - Se usó `RandomOverSampler` para aplicar **oversampling** a la clase minoritaria.
 - Se separaron datos en entrenamiento y prueba asegurando balance.
 
