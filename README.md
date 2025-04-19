@@ -199,10 +199,9 @@ Esto instalará las librerías necesarias para el procesamiento de datos, entren
 
 3. Estructura del proyecto
    ------------------
+Estructura del proyecto:
 
-La estructura del proyecto es la siguiente:
-
-mi_proyecto_sentimiento/
+Taller_2_Deep_Learning/
 ├── notebooks/
 │   ├── 01_exploracion.ipynb
 │   ├── 02_entrenamiento_RNN.ipynb
@@ -221,7 +220,8 @@ mi_proyecto_sentimiento/
 │   ├── rnn_model.h5
 │   ├── lstm_model.h5
 │   ├── bilstm_attention_model.h5
-├── requirements.txt
+└── requirements.txt
+
 
 Los scripts .py contienen el código fuente de los modelos y el preprocesamiento de datos. Los notebooks se utilizan para la exploración y el entrenamiento de los modelos.
 
