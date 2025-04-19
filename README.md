@@ -38,20 +38,20 @@ Pérdida (Loss): La pérdida fue relativamente baja, lo que muestra que el model
    ------------------
 El modelo LSTM, al ser más complejo y especializado en manejar dependencias de largo plazo, mostró inicialmente un alto desempeño en términos de precisión, pero tras un análisis más profundo, se identificaron problemas relacionados con el desbalanceo de los datos:
 
-Precisión (Accuracy): El modelo LSTM alcanzó una precisión de aproximadamente 93%. Aunque esta cifra parece alta, es importante destacar que el modelo no clasificó ningún tweet positivo correctamente. Esto sugiere que el modelo se sesgó hacia la clase negativa debido al desbalance de clases en el dataset, donde los tweets negativos eran más frecuentes que los positivos.
-Pérdida (Loss): La pérdida fue relativamente baja, pero dado el sesgo hacia la clasificación negativa, la baja pérdida no refleja un buen desempeño en la clasificación de ambas clases.
-Análisis: El modelo LSTM, aunque tiene la capacidad de capturar dependencias a largo plazo en las secuencias de texto, falló en la clasificación adecuada de los tweets positivos. La precisión de 93% no es una indicación de buen rendimiento en este caso, ya que una precisión alta puede estar siendo arrastrada por la alta tasa de aciertos en la clasificación de tweets negativos.
-Tendencia de clasificación: El modelo LSTM mostró una tendencia a clasificar todos los tweets como negativos, lo que refuerza la hipótesis de que el desbalance de clases afectó su rendimiento. No hubo clasificación correcta de tweets positivos.
+- Precisión (Accuracy): El modelo LSTM alcanzó una precisión de aproximadamente 93%. Aunque esta cifra parece alta, es importante destacar que el modelo no clasificó ningún tweet positivo correctamente. Esto sugiere que el modelo se sesgó hacia la clase negativa debido al desbalance de clases en el dataset, donde los tweets negativos eran más frecuentes que los positivos.
+- Pérdida (Loss): La pérdida fue relativamente baja, pero dado el sesgo hacia la clasificación negativa, la baja pérdida no refleja un buen desempeño en la clasificación de ambas clases.
+- Análisis: El modelo LSTM, aunque tiene la capacidad de capturar dependencias a largo plazo en las secuencias de texto, falló en la clasificación adecuada de los tweets positivos. La precisión de 93% no es una indicación de buen rendimiento en este caso, ya que una precisión alta puede estar siendo arrastrada por la alta tasa de aciertos en la clasificación de tweets negativos.
+- Tendencia de clasificación: El modelo LSTM mostró una tendencia a clasificar todos los tweets como negativos, lo que refuerza la hipótesis de que el desbalance de clases afectó su rendimiento. No hubo clasificación correcta de tweets positivos.
 
 3. Resultados obtenidos con el Modelo BiLSTM con Atención
    ------------------
 
 El modelo BiLSTM con Atención es el más avanzado entre los tres, tomo más tiempo de procesamiento, al incorporar tanto una LSTM bidireccional como un mecanismo de atención para identificar las partes relevantes de los textos:
 
-Precisión (Accuracy): Este modelo alcanzó una precisión superior al 95%, similar a los otros modelos, pero con la ventaja de que su arquitectura de atención permitió que el modelo se enfocara en las partes más relevantes de cada tweet, mejorando su capacidad para clasificar correctamente los tweets.
-Pérdida (Loss): El modelo mostró una pérdida muy baja, reflejando una excelente capacidad para generalizar y hacer predicciones precisas.
-Análisis: La principal ventaja del BiLSTM con Atención sobre los otros modelos es su capacidad para capturar información contextual desde ambas direcciones de la secuencia (izquierda y derecha). Además, la capa de atención permite que el modelo se enfoque en las palabras clave de los tweets, lo que mejora la precisión en casos más complejos donde los patrones sentimentales no están presentes de manera lineal.
-Tendencia de clasificación: El BiLSTM con Atención logró un buen desempeño en la clasificación tanto de tweets positivos como negativos, sin presentar una inclinación significativa hacia uno u otro. Su capacidad para centrarse en las palabras clave le permitió lograr una clasificación más precisa.
+- Precisión (Accuracy): Este modelo alcanzó una precisión superior al 95%, similar a los otros modelos, pero con la ventaja de que su arquitectura de atención permitió que el modelo se enfocara en las partes más relevantes de cada tweet, mejorando su capacidad para clasificar correctamente los tweets.
+- Pérdida (Loss): El modelo mostró una pérdida muy baja, reflejando una excelente capacidad para generalizar y hacer predicciones precisas.
+- Análisis: La principal ventaja del BiLSTM con Atención sobre los otros modelos es su capacidad para capturar información contextual desde ambas direcciones de la secuencia (izquierda y derecha). Además, la capa de atención permite que el modelo se enfoque en las palabras clave de los tweets, lo que mejora la precisión en casos más complejos donde los patrones sentimentales no están presentes de manera lineal.
+- Tendencia de clasificación: El BiLSTM con Atención logró un buen desempeño en la clasificación tanto de tweets positivos como negativos, sin presentar una inclinación significativa hacia uno u otro. Su capacidad para centrarse en las palabras clave le permitió lograr una clasificación más precisa.
 
 ------------------------------------
 Análisis Comparativo de los Modelos:
@@ -80,47 +80,47 @@ DESCRIPCIÓN DE MODELOS
 ------------------
 El modelo RNN está diseñado para procesar secuencias de texto y clasificarlas en dos categorías: positivas o negativas. Para este modelo, utilizamos una red neuronal recurrente (RNN) que captura dependencias temporales en las secuencias de texto.
 
-Arquitectura:
-Capa de Embedding: La capa de embedding tiene una dimensión de 128, lo que significa que cada palabra del vocabulario se representa como un vector de 128 dimensiones. El número total de palabras en el vocabulario es de max_features (valor que se define al cargar los datos).
-Capa SimpleRNN: Esta capa tiene 64 unidades, lo que permite que la RNN procese la secuencia de texto y capture dependencias temporales.
-Capa de salida (Dense): La capa final es una capa densa con 1 unidad y una activación sigmoid, lo que nos da la predicción binaria (positivo o negativo) para cada tweet.
+- Arquitectura:
+   - Capa de Embedding: La capa de embedding tiene una dimensión de 128, lo que significa que cada palabra del vocabulario se representa como un vector de 128 dimensiones. El número total de palabras en el vocabulario es de max_features (valor que se define al cargar los datos).
+   - Capa SimpleRNN: Esta capa tiene 64 unidades, lo que permite que la RNN procese la secuencia de texto y capture dependencias temporales.
+   - Capa de salida (Dense): La capa final es una capa densa con 1 unidad y una activación sigmoid, lo que nos da la predicción binaria (positivo o negativo) para cada tweet.
 
-Parámetros clave:
-Tamaño de las secuencias: input_len (longitud máxima de las secuencias de entrada).
-Tamaño del vocabulario: vocab_size (determinado por la tokenización).
-Función de activación: sigmoid para clasificación binaria.
+- Parámetros clave:
+   - Tamaño de las secuencias: input_len (longitud máxima de las secuencias de entrada).
+   - Tamaño del vocabulario: vocab_size (determinado por la tokenización).
+   - Función de activación: sigmoid para clasificación binaria.
 
 2. Modelo LSTM
 ------------------
 El modelo LSTM se utiliza para capturar dependencias a largo plazo en los datos de texto, gracias a la capacidad de las LSTM de manejar el desvanecimiento del gradiente. Este modelo tiene una arquitectura con dos capas LSTM que procesan las secuencias en dos niveles.
 
-Arquitectura:
-Capa de Embedding: Similar al modelo RNN, la capa de embedding tiene una dimensión de 128, lo que significa que cada palabra se representa con un vector de 128 dimensiones.
-Primera capa LSTM: Tiene 64 unidades y devuelve secuencias para pasar la información a la siguiente capa LSTM.
-Segunda capa LSTM: Esta capa tiene 32 unidades, y sus salidas se usan para realizar la predicción.
-Capas Dropout: Se aplican para evitar el sobreajuste. La tasa de Dropout es del 50% en la primera capa, 40% en la segunda capa y 30% en la capa densa.
-Capa de salida (Dense): Esta capa tiene 1 unidad con una activación sigmoid para hacer la clasificación binaria.
+- Arquitectura:
+   - Capa de Embedding: Similar al modelo RNN, la capa de embedding tiene una dimensión de 128, lo que significa que cada palabra se representa con un vector de 128 dimensiones.
+   - Primera capa LSTM: Tiene 64 unidades y devuelve secuencias para pasar la información a la siguiente capa LSTM.
+   - Segunda capa LSTM: Esta capa tiene 32 unidades, y sus salidas se usan para realizar la predicción.
+   - Capas Dropout: Se aplican para evitar el sobreajuste. La tasa de Dropout es del 50% en la primera capa, 40% en la segunda capa y 30% en la capa densa.
+   - Capa de salida (Dense): Esta capa tiene 1 unidad con una activación sigmoid para hacer la clasificación binaria.
 
-Parámetros clave:
-Tamaño de las secuencias: input_len (longitud máxima de las secuencias de entrada).
-Tamaño del vocabulario: vocab_size.
-Función de activación: sigmoid para la clasificación binaria.
+- Parámetros clave:
+   - Tamaño de las secuencias: input_len (longitud máxima de las secuencias de entrada).
+   - Tamaño del vocabulario: vocab_size.
+   - Función de activación: sigmoid para la clasificación binaria.
 
 3. Modelo BiLSTM con Atención
 ------------------
 El modelo BiLSTM con atención utiliza LSTM bidireccionales junto con un mecanismo de atención para mejorar la capacidad del modelo de centrarse en las partes más relevantes del texto. Esto ayuda a mejorar la precisión al procesar secuencias de texto de manera más eficiente.
 
-Arquitectura:
-Capa de Embedding: Similar a los otros modelos, la capa de embedding tiene una dimensión de 128, representando cada palabra como un vector de 128 dimensiones.
-Capa BiLSTM: Esta capa tiene 64 unidades y es bidireccional, lo que significa que el modelo procesa las secuencias de texto en ambas direcciones (de izquierda a derecha y de derecha a izquierda).
-Capa de atención: Calcula los pesos de atención para cada paso temporal de la secuencia. Esto permite que el modelo se enfoque en las partes más importantes del tweet.
-Lambda: Realiza una reducción a lo largo de la secuencia para generar un vector de contexto a partir de las salidas ponderadas por la atención.
-Capa de salida (Dense): Tiene 1 unidad con activación sigmoid para realizar la clasificación binaria.
+- Arquitectura:
+   - Capa de Embedding: Similar a los otros modelos, la capa de embedding tiene una dimensión de 128, representando cada palabra como un vector de 128 dimensiones.
+   - Capa BiLSTM: Esta capa tiene 64 unidades y es bidireccional, lo que significa que el modelo procesa las secuencias de texto en ambas direcciones (de izquierda a derecha y de derecha a izquierda).
+   - Capa de atención: Calcula los pesos de atención para cada paso temporal de la secuencia. Esto permite que el modelo se enfoque en las partes más importantes del tweet.
+   - Lambda: Realiza una reducción a lo largo de la secuencia para generar un vector de contexto a partir de las salidas ponderadas por la atención.
+   - Capa de salida (Dense): Tiene 1 unidad con activación sigmoid para realizar la clasificación binaria.
 
-Parámetros clave:
-Tamaño de las secuencias: ventana (longitud máxima de las secuencias de entrada, igual al input_len en los otros modelos).
-Tamaño del vocabulario: vocab_size.
-Función de activación: sigmoid para la clasificación binaria.
+- Parámetros clave:
+   - Tamaño de las secuencias: ventana (longitud máxima de las secuencias de entrada, igual al input_len en los otros modelos).
+   - Tamaño del vocabulario: vocab_size.
+   - Función de activación: sigmoid para la clasificación binaria.
 
 
 DESCRIPCIÓN DE ARCHIVOS .py
