@@ -6,6 +6,22 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 
 def load_and_prepare_data(url, max_features=10000, maxlen=300, test_size=0.2):
+    """
+Carga, prepara y divide los datos para el entrenamiento y prueba de un modelo de análisis de sentimientos.
+
+Parámetros:
+- url (str): URL desde donde se descargará el archivo CSV con los datos.
+- max_features (int, opcional): Número máximo de palabras a considerar en el vocabulario. El valor por defecto es 10000.
+- maxlen (int, opcional): Longitud máxima de las secuencias. Las secuencias más largas se truncarán y las más cortas se completarán. El valor por defecto es 300.
+- test_size (float, opcional): Proporción del dataset que se utilizará como conjunto de prueba. El valor por defecto es 0.2 (20%).
+
+Retorna:
+- x_resampled (array): Datos de entrenamiento balanceados mediante oversampling.
+- y_resampled (array): Etiquetas de entrenamiento balanceadas mediante oversampling.
+- x_test (array): Datos de prueba.
+- y_test (array): Etiquetas de prueba.
+- tokenizer (Tokenizer): Tokenizador entrenado que convierte los textos en secuencias numéricas.
+"""
     # Cargar dataset
     csv_path = tf.keras.utils.get_file("twitter_sentiment.csv", url)
     df = pd.read_csv(csv_path)
