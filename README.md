@@ -20,7 +20,7 @@ Para abordar esto:
 - Se usó `RandomOverSampler` para aplicar **oversampling** a la clase minoritaria.
 - Se separaron datos en entrenamiento y prueba asegurando balance.
 
-===================================
+
 RESULTADOS OBTENIDOS Y CONCLSUIONES
 ===================================
 
@@ -72,7 +72,7 @@ RNN y LSTM: Aunque ambos modelos alcanzaron una precisión alta, el LSTM sufrió
 
 BiLSTM con Atención: Este modelo no solo superó el desbalance de clases de manera más efectiva gracias a su arquitectura de atención, sino que también mostró un rendimiento equilibrado, con una buena clasificación tanto de los tweets negativos como positivos.
 
-=======================
+
 DESCRIPCIÓN DE MODELOS
 =======================
 
@@ -122,7 +122,7 @@ Tamaño de las secuencias: ventana (longitud máxima de las secuencias de entrad
 Tamaño del vocabulario: vocab_size.
 Función de activación: sigmoid para la clasificación binaria.
 
-============================
+
 DESCRIPCIÓN DE ARCHIVOS .py
 ============================
 
@@ -175,8 +175,7 @@ DESCRIPCIÓN DE ARCHIVOS .py
   - ver_resumen_modelo(modelo): imprime el resumen (summary) de la arquitectura del modelo.
   - Devuelve gráficas y salidas útiles para interpretación.
 
-===================================================================
-Instrucciones para ejecutar el proyecto de análisis de sentimientos
+INSTRUCCIONES PARA EJECUTAR EL TALLER2 DE ANÁLISIS DE SENTIMIENTOS
 ===================================================================
 
 A continuación se describen los pasos para ejecutar el código correctamente.
