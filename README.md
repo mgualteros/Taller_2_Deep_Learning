@@ -315,12 +315,3 @@ Cargar el modelo:
 from tensorflow.keras.models import load_model
 
 model = load_model('models/bilstm_attention_model.h5')
-
-11. Resultados y análisis comparativo
-    ------------------
-
-En cuanto a los resultados obtenidos:
-
-- RNN: mostró un buen desempeño en la clasificación de tweets negativos.
-- LSTM: clasificó casi todo como negativo, lo que indica que las métricas no son completamente adecuadas para este modelo.
-- BiLSTM con atención: mostró un excelente desempeño, especialmente clasificando correctamente los tweets positivos con una precisión superior al 95%.
