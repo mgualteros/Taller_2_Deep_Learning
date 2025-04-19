@@ -1,5 +1,3 @@
-# model_rnn.py
-
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Embedding, SimpleRNN, Dense
 from tensorflow.keras.optimizers import Adam
