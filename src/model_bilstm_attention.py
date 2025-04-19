@@ -5,21 +5,22 @@ from tensorflow.keras.layers import (
     Multiply, Softmax, Lambda
 )
 from tensorflow.keras.optimizers import Adam
+
 def build_bilstm_attention_model(ventana, vocab_size, embedding_dim=128):
-"""
-Construye un modelo BiLSTM con atención para análisis de sentimientos.
+    """
+    Construye un modelo BiLSTM con atención para análisis de sentimientos.
 
-Este modelo utiliza una arquitectura de LSTM bidireccional junto con una capa de atención para mejorar la capacidad del 
-modelo de enfocarse en las partes relevantes de la secuencia de texto.
+    Este modelo utiliza una arquitectura de LSTM bidireccional junto con una capa de atención para mejorar la capacidad del 
+    modelo de enfocarse en las partes relevantes de la secuencia de texto.
 
-Parámetros:
-- ventana: longitud máxima de las secuencias de entrada (después de aplicar padding)
-- vocab_size: número de palabras en el vocabulario (tamaño del vocabulario)
-- embedding_dim: dimensión de la representación densa para las palabras (embedding)
+    Parámetros:
+    - ventana: longitud máxima de las secuencias de entrada (después de aplicar padding)
+    - vocab_size: número de palabras en el vocabulario (tamaño del vocabulario)
+    - embedding_dim: dimensión de la representación densa para las palabras (embedding)
 
-Retorna:
-- model: modelo Keras compilado listo para entrenamiento. 
-"""
+    Retorna:
+    - model: modelo Keras compilado listo para entrenamiento. 
+    """
     inputs = Input(shape=(ventana,))
     embedding = Embedding(input_dim=vocab_size, output_dim=embedding_dim, input_length=ventana)(inputs)
     lstm_out = Bidirectional(LSTM(64, return_sequences=True))(embedding)
