@@ -1,4 +1,3 @@
-Integrantes:
 Sebastián Heredia - Alejandra Bolívar - Michael Gualteros - Herny Herrera - Juan Rodriguez
 
 # Análisis de Sentimientos en Tweets con Deep Learning
