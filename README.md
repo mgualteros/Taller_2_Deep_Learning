@@ -57,10 +57,12 @@ Tendencia de clasificación: El BiLSTM con Atención logró un buen desempeño e
 Análisis Comparativo de los Modelos:
 ------------------------------------
 
-Modelo	Precisión (Accuracy)	Pérdida (Loss)	Observaciones
-RNN	> 95%	Baja	Mejor desempeño con tweets negativos. Menos efectivo a largo plazo.
-LSTM	93%	Baja	Modelo sesgado hacia la clase negativa debido al desbalance de clases. No clasifica bien los tweets positivos.
-BiLSTM con Atención	> 95%	Muy baja	Mejor precisión, enfocándose en partes clave de los tweets. Mejor para manejar contexto y relaciones complejas.
+Modelo                  | Precisión (Accuracy) | Pérdida (Loss) | Observaciones
+------------------------|----------------------|----------------|-------------------------------------------------------------------------------------------
+RNN                     | > 95%                | Baja           | Mejor desempeño con tweets negativos. Menos efectivo en secuencias largas y complejas.
+LSTM                    | 93%                  | Baja           | Modelo sesgado hacia la clase negativa por desbalance de clases. No clasifica bien tweets positivos.
+BiLSTM con Atención     | > 95%                | Muy baja       | Mejor precisión general. Se enfoca en partes clave del texto. Maneja bien contexto y relaciones complejas.
+
 
 ------------
 Conclusiones
