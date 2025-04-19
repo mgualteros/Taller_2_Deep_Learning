@@ -4,7 +4,7 @@ Este repositorio contiene una serie de notebooks organizados en la carpeta `note
 
 ## Estructura del Proyecto
 
-### 📁 notebooks/
+### notebooks/
 Contiene los notebooks principales del proyecto:
 
 #### `01_exploracion.ipynb`
