@@ -8,7 +8,7 @@ Este proyecto implementa y compara modelos de redes neuronales recurrentes para 
 
 El repositorio de este proyecto es: https://github.com/mgualteros/Taller_2_Deep_Learning
 
-## Contexto del problema
+## Hallazgos del problema
 
 El conjunto de datos presentaba un **importante desbalanceo**, donde apenas el **7%** de los ejemplos pertenecía a la clase **positiva (1)**. Además, se encontraron:
 
