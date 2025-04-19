@@ -28,10 +28,10 @@ RESULTADOS OBTENIDOS Y CONCLSUIONES
    ------------------
 El modelo RNN fue entrenado con los datos de entrenamiento y probado en los datos de test. Durante la evaluación, observamos lo siguiente:
 
-Precisión (Accuracy): El modelo RNN alcanzó una precisión superior al 95%, lo que indica que pudo clasificar correctamente la mayoría de los tweets, aunque las redes recurrentes simples no son tan efectivas a largo plazo.
+- Precisión (Accuracy): El modelo RNN alcanzó una precisión superior al 95%, lo que indica que pudo clasificar correctamente la mayoría de los tweets, aunque las redes recurrentes simples no son tan efectivas a largo plazo.
 Pérdida (Loss): La pérdida fue relativamente baja, lo que muestra que el modelo minimizó el error durante el entrenamiento.
-Análisis: Aunque el rendimiento del modelo fue bueno, los resultados de la RNN generalmente no son tan sólidos cuando se trata de capturar dependencias a largo plazo o patrones complejos en los datos, especialmente en tareas de clasificación de texto.
-Tendencia de clasificación: El modelo mostró una ligera tendencia a clasificar los tweets negativos con mayor precisión, lo que puede ser un punto a favor dependiendo del enfoque de clasificación que se busque.
+- Análisis: Aunque el rendimiento del modelo fue bueno, los resultados de la RNN generalmente no son tan sólidos cuando se trata de capturar dependencias a largo plazo o patrones complejos en los datos, especialmente en tareas de clasificación de texto.
+- Tendencia de clasificación: El modelo mostró una ligera tendencia a clasificar los tweets negativos con mayor precisión, lo que puede ser un punto a favor dependiendo del enfoque de clasificación que se busque.
 
 
 2. Resultados obtenidos con el Modelo LSTM
